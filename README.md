@@ -46,14 +46,14 @@ En
 $cfg['Servers'][$i]['password'] = 'password';
 ```
 
-#### Etape 4
+#### Etape 5
 Dans XAMPP, au niveau de MySql cliquer sur "config".<br>
 Dans le fichier *my.ini*, décommenter la ligne:
 ```shell
 #password = password     
 ```
 
-#### Etape 5
+#### Etape 6
 Stop et Restart Apache et MySql.
 
 ### Partie back-end
@@ -77,7 +77,6 @@ npm i -g @angular-devkit/core typescript
 ## Mise en place 
 
 ### Création de la base de données
-
 - Aller sur http://localhost:80/phpmyadmin/ <br>
 ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'Apache)<br>
 - Créer une nouvelle base de données avec comme nom : 'nara_database' (utf8mb4_bin)<br>
@@ -85,18 +84,24 @@ ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'A
 - Exécuter.
 
 ### back-end
-
 Ouvrir un terminal sur Nara-master/back-end/
 ```shell
-$ node server.js 
+ node server.js 
 ```
 Tous les ports doivent s'afficher.
 
 ### front-end
-
 Ouvrir un terminal sur  Nara-master/front-end/
 ```shell
 npm install i @angular-devkit/build-angular
 ng serve -o
 ```
 L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200
+
+## Outils de développement
+
+Installer Visual Studio Code: 
+<a href="https://code.visualstudio.com/download" target="_blank">`https://code.visualstudio.com/download`</a> <br>
+Ouvrir le dossier du projet dans Visual Studio Code.
+
+
