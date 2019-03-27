@@ -67,7 +67,7 @@ Installer npm
 ```shell
 npm install -g npm@latest
 ```
-#### Etape 3
+### Partie front-end
 Installer Angular
 ```shell
 npm install -g @angular/cli@latest
