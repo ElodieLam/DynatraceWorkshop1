@@ -1,0 +1,36 @@
+section 
+{
+    float: left;
+    margin: 0 1.5%;
+    width: 40%;
+    height: 30%;
+}
+
+.button{
+    max-height: 35px;
+    margin: auto;
+}
+
+listouille
+{
+    float: right;
+    margin: 0 1.5%;
+    width: 40%;
+    height: 30%;
+}
+
+.mat-header-cell {
+    text-align: center;
+    font-size: 12px;
+}
+
+.mat-cell {
+    padding: 5px 5px 5px 0;
+    text-align: center;
+}
+
+h3
+{
+    margin: 10px 10px 10px;
+    text-align: center;
+}

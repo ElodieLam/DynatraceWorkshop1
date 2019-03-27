@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>Gérer Demande de congé</h1>
+<div mat-dialog-content>
+  <h3>{{infoCollab.nom_collab}} {{infoCollab.prenom_collab}} - {{infoCollab.nom_service}}</h3>
+  <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Type Demande</th>
+        <th>Date début</th>
+        <th>Date fin</th> 
+        <th>Durée</th> 
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td *ngIf = "demande.type_demande_conge === 'rtt'"> RTT</td>
+        <td *ngIf = "demande.type_demande_conge === 'cp'"> Congé Payé</td>
+        <td *ngIf = "demande.type_demande_conge === 'css'"> Congé Sans Solde</td>
+        <td *ngIf = "!demande.debut_matin"> {{demande.date_debut | date : 'dd/MM/yyyy'}} : après-midi </td>
+        <td *ngIf = "demande.debut_matin"> {{demande.date_debut | date : 'dd/MM/yyyy'}} : matin </td>
+        <td *ngIf = "!demande.fin_aprem"> {{demande.date_fin | date : 'dd/MM/yyyy'}} : matin </td>
+        <td *ngIf = "demande.fin_aprem"> {{demande.date_fin | date : 'dd/MM/yyyy'}} : après-midi </td>
+        <td>{{demande.duree}} demi-journées</td>
+      </tr>
+      </tbody>
+    </table>  
+  
+  <section>
+    <h4>Récapitulatif</h4>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Type</th>
+          <th>Pris</th>
+          <th>Restant</th> 
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>RTT</td>
+          <td>{{infoCollab.rtt_pris}}</td>
+          <td>{{infoCollab.rtt_restant}}</td>
+        </tr>
+        <tr>
+            <td>Congé Payé</td>
+            <td>{{infoCollab.cp_pris}}</td>
+            <td>{{infoCollab.cp_restant}}</td>
+        </tr>
+        <tr>
+            <td>Congé Sans Solde</td>
+            <td>{{infoCollab.css_pris}}</td>
+            <td>–</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+</div>
+<div mat-dialog-actions>
+  <aside><button class="margin-right btn btn-success" (click) = "onClick(1)">Accepter</button>
+  <button class="margin-right btn btn-danger" (click) = "onClick(0)">Refuser</button></aside>
+  <button mat-button (click)="onCancel()">Annuler</button>
+</div>
+    
