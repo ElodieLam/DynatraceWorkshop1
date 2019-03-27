@@ -78,10 +78,11 @@ npm i -g @angular-devkit/core typescript
 
 ### Création de la base de données
 
-Aller sur http://localhost:80/phpmyadmin/ ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'Apache)<br>
-Créer une nouvelle base de données avec comme nom : 'nara_database' (utf8mb4_bin)<br>
-Aller dans l'onglet "Import" et importer le fichier: Nara/Database/nara_database.sql<br>
-Exécuter
+- Aller sur http://localhost:80/phpmyadmin/ <br>
+ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'Apache)<br>
+- Créer une nouvelle base de données avec comme nom : 'nara_database' (utf8mb4_bin)<br>
+- Aller dans l'onglet "Import" et importer le fichier: Nara-master/Database/nara_database.sql<br>
+- Exécuter.
 
 ### back-end
 
@@ -98,3 +99,4 @@ Ouvrir un terminal sur  Nara-master/front-end/
 npm install i @angular-devkit/build-angular
 ng serve -o
 ```
+L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200
