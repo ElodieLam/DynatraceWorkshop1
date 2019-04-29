@@ -4,7 +4,10 @@
 L'objectif de cet atelier est d'installer et de prendre en main une application utilisant Node.js et Angular avec une base de données MySql. 
 
 ### 1.a Présentation de l'application
-L'application en question permet à une entreprise de gérer les demandes de congés et les notes de frais de ses collaborateurs.
+
+L'application permet à une entreprise de gérer les demandes de congés et les notes de frais de ses collaborateurs. <br>
+
+![Alt text](images/Nara_conge.PNG?raw=true "Title")
 
 Le menu de l'application est composé de plusieurs onglets: 
 - *Notifications* permet à l'utilisateur de visualiser ses notifications
@@ -131,13 +134,18 @@ ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'A
 - Aller dans l'onglet "Import" et importer le fichier: Nara-master/Database/nara_database.sql<br>
 - Exécuter.
 
-### 3.b back-end
+### 3.b Vérification des droits utilisateurs
+- Tourjours sur phpMyAdmin, aller sur l'onglet "User accounts"
+- Vérifier que la colonne mot de passe de l'utilisateur "root", "localhost" est bien à "yes". Sinon éditer les privilèges et changer le mot de passe à "password".  <br>
+![Alt text](images/user_account.PNG?raw=true "Title")
+
+### 3.c back-end
 Ouvrir un terminal sur Nara-master/back-end/
 ```shell
  node server.js 
 ```
 
-### 3.c front-end
+### 3.d front-end
 
 Ouvrir un terminal sur  Nara-master/front-end/
 ```shell
