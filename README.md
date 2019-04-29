@@ -125,7 +125,7 @@ npm install -g @angular/cli@latest
 npm i -g @angular-devkit/core typescript
 ```
 
-## 3. Mise en place 
+## 3. Mise en place et exécution
 
 ### 3.a Création de la base de données
 - Aller sur http://localhost:80/phpmyadmin/ <br>
@@ -135,17 +135,17 @@ ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'A
 - Exécuter.
 
 ### 3.b Vérification des droits utilisateurs
-- Tourjours sur phpMyAdmin, aller sur l'onglet "User accounts"
+- Toujours sur phpMyAdmin, retourner au menu d'accueil, aller sur l'onglet "User accounts"
 - Vérifier que la colonne mot de passe de l'utilisateur "root", "localhost" est bien à "yes". Sinon éditer les privilèges et changer le mot de passe à "password".  <br>
 ![Alt text](images/user_account.PNG?raw=true "Title")
 
-### 3.c back-end
+### 3.c Exécution back-end
 Ouvrir un terminal sur Nara-master/back-end/
 ```shell
  node server.js 
 ```
 
-### 3.d front-end
+### 3.d Exécution front-end
 
 Ouvrir un terminal sur  Nara-master/front-end/
 ```shell
