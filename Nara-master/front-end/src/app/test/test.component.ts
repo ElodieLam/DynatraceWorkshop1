@@ -18,13 +18,10 @@ export class TestComponent implements OnInit {
 
   createDemande()
   {
-    //while(true){
-  
     this.newDemande.id_collab = 5;
-    this.newDemande.id_demande_conge = 1000;
     this.newDemande.date_debut = new Date();
     this.newDemande.date_fin = new Date();
-    this.newDemande.motif_refus = "Motif refus";
+    this.newDemande.motif_refus = "Pas de motif";
     this.newDemande.debut_matin = true;
     this.newDemande.duree = 1;
     this.newDemande.fin_aprem = true;
@@ -33,23 +30,7 @@ export class TestComponent implements OnInit {
 
     this.demandecongeService.createDemandeconges(this.newDemande);
 
-    console.log("created");
-
-    this.newDemande.id_collab = 5;
-    this.newDemande.id_demande_conge = 1000;
-    this.newDemande.date_debut = new Date();
-    this.newDemande.date_fin = new Date();
-    this.newDemande.motif_refus = "Motif refus";
-    this.newDemande.debut_matin = true;
-    this.newDemande.duree = 1;
-    this.newDemande.fin_aprem = true;
-    this.newDemande.type_demande_conge = "RTT"
-    this.newDemande.status_conge = 'attCds';
-
-    this.demandecongeService.createDemandeconges(this.newDemande);
-
-    console.log("created");
-    //}   
+    console.log("Demande de congé crée");
   }
 
   
