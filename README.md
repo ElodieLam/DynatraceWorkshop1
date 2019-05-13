@@ -1,11 +1,11 @@
 # DynatraceWorkshop1
 
 ## 1. Description du projet
-L'objectif de cet atelier est d'installer et de prendre en main une application utilisant Node.js et Angular avec une base de données MySql. 
+L'objectif de ce document est d'installer et de prendre en main une application utilisant Node.js et Angular avec une base de données MySql. 
 
 ### 1.a Présentation de l'application
 
-L'application permet à une entreprise de gérer les demandes de congés et les notes de frais de ses collaborateurs. <br>
+L'application permet de gérer les demandes de congés et les notes de frais de collaborateurs. <br>
 
 ![Alt text](images/Nara_conge.PNG?raw=true "Title")
 
@@ -22,7 +22,7 @@ Selon le poste de l'utilisateur (Chef de service, RH ou Compta), il aura accès 
 - *Gestion missions* permet au chef de service de créer des nouvelles missions. Chaque note de frais est reliée à une mission.
 
 
-### 1.b Exemple de cas d'utilisation: <br>
+### 1.b Exemple de cas d'utilisation - Cycle d'une demande de congé: <br>
 Un simple collaborateur crée une demande de congé. Lorsqu'il la valide, elle est envoyée automatiquement à son chef de service qui recevra de son côté une notification informant de cette demande. Il pourra accepter ou refuser cette demande. Elle sera ensuite envoyée au RH qui pourra à son tour accepter ou refuser la demande. A la fin du cycle, le collaborateur recevra une notification lui informant de l'état final de sa demande. Si sa demande a été accepté, ses congés seront mis à jour dans son calendrier.
 
 
@@ -63,8 +63,7 @@ Télécharger la dernière version de XAMPP pour Windows:
 <a href="https://www.apachefriends.org/fr/download.html" target="_blank">`https://www.apachefriends.org/fr/download.html`</a>
 
 #### Etape 2
-Lancer l'installation de XAMPP. <br>
-Sélectionner MySql et PhpMyAdmin lors de l'installation des composants logiciels.
+Lancer l'installation de XAMPP et sélectionner MySql et PhpMyAdmin lors de l'installation des composants logiciels.
 
 #### Etape 3
 Lorsque l'installation est terminée, lancer XAMPP puis les modules Apache et MySQL (en cliquant sur "Start").<br>
@@ -112,7 +111,7 @@ Dans le fichier *my.ini*, décommenter la ligne:
 #### Etape 1
 Télécharger la dernière version de l'installer Node.js pour Windows: 
 <a href="https://nodejs.org/en/download/" target="_blank">`https://nodejs.org/en/download/`</a><br>
-Installer Node.js
+Lancer l'installer Node.js
 #### Etape 2
 Installer npm
 ```shell
@@ -140,20 +139,20 @@ ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'A
 ![Alt text](images/user_account.PNG?raw=true "Title")
 
 ### 3.c Exécution back-end
-Ouvrir un terminal sur Nara-master/back-end/
+Ouvrir un terminal au niveau du dossier Nara-master/back-end/
 ```shell
  node server.js 
 ```
 
 ### 3.d Exécution front-end
 
-Ouvrir un terminal sur  Nara-master/front-end/
+Ouvrir un terminal au niveau du dossier Nara-master/front-end/
 ```shell
 npm install i @angular-devkit/build-angular
 ng serve -o
 ```
 L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200 <br>
-Connecter vous avec un des comptes décrits dans la partie 1.c
+Connecter vous avec un des comptes décrits dans la partie 1.c (exemple - Identifiant: Travis, Mdp: password)
 
 ## 4. Outils de développement
 
