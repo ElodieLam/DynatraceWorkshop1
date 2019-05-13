@@ -1,11 +1,11 @@
 # DynatraceWorkshop1
 
-## 1. Description du projet
+## 1 - Description du projet
 L'objectif de ce document est d'installer et de prendre en main une application utilisant Node.js et Angular avec une base de données MySql. 
 
-### 1.a Présentation de l'application
+### 1.a - Présentation de l'application
 
-L'application permet de gérer les demandes de congés et les notes de frais de collaborateurs. <br>
+L'application permet de gérer les demandes de congés et les notes de frais des collaborateurs d'une entreprise. <br>
 
 ![Alt text](images/Nara_conge.PNG?raw=true "Title")
 
@@ -22,17 +22,17 @@ Selon le poste de l'utilisateur (Chef de service, RH ou Compta), il aura accès 
 - *Gestion missions* permet au chef de service de créer des nouvelles missions. Chaque note de frais est reliée à une mission.
 
 
-### 1.b Exemple de cas d'utilisation - Cycle d'une demande de congé: <br>
+### 1.b - Exemple de cas d'utilisation - Cycle d'une demande de congé: <br>
 Un simple collaborateur crée une demande de congé. Lorsqu'il la valide, elle est envoyée automatiquement à son chef de service qui recevra de son côté une notification informant de cette demande. Il pourra accepter ou refuser cette demande. Elle sera ensuite envoyée au RH qui pourra à son tour accepter ou refuser la demande. A la fin du cycle, le collaborateur recevra une notification lui informant de l'état final de sa demande. Si sa demande a été accepté, ses congés seront mis à jour dans son calendrier.
 
 
-### 1.c Comptes utilisateurs par défaut:
+### 1.c - Comptes utilisateurs par défaut:
 
 Simple collaborateur du service Logistique:  <br>
 - Identifiant: Travis, Mdp: password 
 - Identifiant: ef, Mdp: password
 
-Chef de service Logisique: <br>
+Chef de service Logistique: <br>
 - Identifiant: Duflo, Mdp: password
 
 RH: <br>
@@ -44,7 +44,7 @@ Comptabilité: <br>
 - Identifiant: Martin, Mdp: password <br>
 
 
-### 1.d Technologies utilisées
+### 1.d - Technologies utilisées
 En suivant ce document, vous installerez tout d'abord XAMPP qui est un outil de distribution Apache qui permet de créer facilement un serveur web local à des fins de test. On activera les modules MySql pour la base de données et l'application web PhpMyAdmin pour pouvoir gérer plus facilement cette base de données. Vous installerez ensuite le module Node.js et Angular pour pouvoir faire fonctionner l'application.
 
 #### Node.js
@@ -53,10 +53,14 @@ Node.js est une plateforme construite sur le moteur JavaScript V8 de Chrome qui 
 #### Angular
 Anular est un framework côté client open source basé sur le language de développement TypeScript (Google). Il permet de créer plus facilement des Single Page Applications.
 
-## 2. Installation
+## 2 - Installation
 (Windows seulement)
 
-### 2.a Partie base de données
+### 2.a - Téléchargement du projet Git
+
+Dans l'interface GitHub, cliquer sur le bouton "Clone or Download" puis "Download ZIP" pour télécharger le projet.
+
+### 2.b - Partie base de données
 
 #### Etape 1
 Télécharger la dernière version de XAMPP pour Windows:
@@ -106,58 +110,99 @@ Dans le fichier *my.ini*, décommenter la ligne:
 #### Etape 6
 "Stop" et "Restart" Apache et MySql.
 
-### 2.b Partie back-end
+### 2.c - Partie back-end
 
 #### Etape 1
 Télécharger la dernière version de l'installer Node.js pour Windows: 
 <a href="https://nodejs.org/en/download/" target="_blank">`https://nodejs.org/en/download/`</a><br>
 Lancer l'installer Node.js
+
 #### Etape 2
-Installer npm
+
+Ouvrir un terminal. <br>
+Installer npm avec:
 ```shell
 npm install -g npm@latest
 ```
-### 2.c Partie front-end
-Installer Angular
+### 2.d - Partie front-end
+Installer Angular:
 ```shell
 npm install -g @angular/cli@latest
 npm i -g @angular-devkit/core typescript
+npm install i @angular-devkit/build-angular
 ```
 
-## 3. Mise en place et exécution
+## 3 - Mise en place et exécution
 
-### 3.a Création de la base de données
+### 3.a - Création de la base de données
 - Aller sur http://localhost:80/phpmyadmin/ <br>
 ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'Apache)<br>
 - Créer une nouvelle base de données avec comme nom : 'nara_database' (utf8mb4_bin)<br>
 - Aller dans l'onglet "Import" et importer le fichier: Nara-master/Database/nara_database.sql<br>
 - Exécuter.
 
-### 3.b Vérification des droits utilisateurs
+### 3.b - Vérification des droits utilisateurs
 - Toujours sur phpMyAdmin, retourner au menu d'accueil, aller sur l'onglet "User accounts"
 - Vérifier que la colonne mot de passe de l'utilisateur "root", "localhost" est bien à "yes". Sinon éditer les privilèges et changer le mot de passe à "password".  <br>
 ![Alt text](images/user_account.PNG?raw=true "Title")
 
-### 3.c Exécution back-end
+### 3.c - Exécution back-end
 Ouvrir un terminal au niveau du dossier Nara-master/back-end/
 ```shell
  node server.js 
 ```
 
-### 3.d Exécution front-end
+### 3.d - Exécution front-end
 
-Ouvrir un terminal au niveau du dossier Nara-master/front-end/
+Ouvrir un terminal au niveau du dossier Nara-master/front-end/ 
+<br> 
+
 ```shell
-npm install i @angular-devkit/build-angular
 ng serve -o
 ```
 L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200 <br>
-Connecter vous avec un des comptes décrits dans la partie 1.c (exemple - Identifiant: Travis, Mdp: password)
+Connecter vous avec un des comptes décrits dans la partie 1.c (exemple - Identifiant: Travis, Mdp: password) <br><br>
 
-## 4. Outils de développement
+:exclamation: A chaque fois que vous voudrez lancer l'application, il faudra réitérer les étapes 3.c et 3.d
 
-Installer Visual Studio Code: 
+## 4 - Tests de charge avec l'outil Artillery
+
+### 4.a - Installation
+
+Ouvrir un nouveau terminal au niveau du dossier Nara-master/back-end/artillery_scripts <br><br>
+Installer le module artillery:
+```shell
+npm install -g artillery
+```
+Vérifier qu'Artillery a bien été installé:
+```shell
+artillery -V
+```
+
+### 4.b - Exemple de script 
+
+Artillery nous permet d'exécuter des scripts .json illustrant des scénarios de test. Dans cet exemple, nous spécifions que nous testons un service qui s'exécute sur http://localhost:3000 et qui parlera via HTTP. <br>
+
+Le scénario *scenario-login.json* comprend 3 phases:
+- Phase 1: Une phase de chargement qui dure 10 secondes avec 20 nouveaux utilisateurs virtuels se connectant à l'application Nara (arrivant toutes les secondes en moyenne) 
+- Phase 2: Dans cette phase nous augmentons le taux d'arrivée de 20 à 100 en 2 minutes 
+- Phase 3: Puis, 100 arrivées par seconde pendant 2 minutes.
+
+Pour exécuter le script scenario-login.json:
+```shell
+artillery run scenario-login.json
+```
+
+Le scénario *createDemandeConge_fail.json* va créer des demandes de congé avec un id_collab = 0 (format non accepté), cela va engendrer des erreurs au niveau des requêtes que l'ont pourra voir dans Dynatrace. 
+Pour exécuter le script createDemandeConge_fail.json: 
+```shell
+artillery run createDemandeConge_fail.json
+```
+
+Pour plus d'information sur Artillery: <a href="https://artillery.io/docs/" target="_blank">`https://artillery.io/docs/`</a> 
+
+## 5 - Outils de développement
+
+Installer Visual Studio Code pour pouvoir visualiser/modifier le code source plus facilement : 
 <a href="https://code.visualstudio.com/download" target="_blank">`https://code.visualstudio.com/download`</a> <br>
 Ouvrir le dossier du projet dans Visual Studio Code.
-
-
