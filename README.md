@@ -129,7 +129,6 @@ Installer Angular:
 ```shell
 npm install -g @angular/cli@latest
 npm i -g @angular-devkit/core typescript
-npm install i @angular-devkit/build-angular
 ```
 
 ## 3 - Mise en place et exécution
@@ -158,6 +157,7 @@ Ouvrir un terminal au niveau du dossier Nara-master/front-end/
 <br> 
 
 ```shell
+npm install i @angular-devkit/build-angular (à faire 1 fois à l'installation)
 ng serve -o
 ```
 L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200 <br>
@@ -205,4 +205,4 @@ Pour plus d'information sur Artillery: <a href="https://artillery.io/docs/" targ
 
 Installer Visual Studio Code pour pouvoir visualiser/modifier le code source plus facilement : 
 <a href="https://code.visualstudio.com/download" target="_blank">`https://code.visualstudio.com/download`</a> <br>
-Ouvrir le dossier du projet dans Visual Studio Code.
+
