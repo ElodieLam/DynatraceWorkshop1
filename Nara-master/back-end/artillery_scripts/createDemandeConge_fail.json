@@ -1,0 +1,41 @@
+{
+    "config": {
+        "target": "http://localhost:3000",
+        "phases": [
+            {
+               "duration": 10,
+               "arrivalRate": 2
+            }
+        ],
+        "processor": "./createDemandeConge.js"
+    },
+    "scenarios": [
+      {
+         "flow": [
+            {"function": "checkGlobal"},
+             
+              {"post": 
+                {"url": "/demandeconge/demandecongescreate",
+                  "json":
+                    {
+                        "datedebut": "{{datedebut}}", 
+                        "datefin": "{{datefin}}",
+                        "debutmatin": "{{debutmatin}}", 
+                        "duree": "{{duree}}", 
+                        "finaprem": "{{finaprem}}", 
+                        "idcollab": "{{idcollab}}", 
+                        "iddemandeconge": "{{iddemandeconge}}", 
+                        "motifrefus": "{{motifrefus}}", 
+                        "statusconge": "{{statusconge}}",
+                        "typedemandeconge": "{{typedemandeconge}}"                         
+                    },
+                  "headers": {"Content-Type": "application/json"},
+                  "beforeRequest": "setJSONBody_idcollab_null"
+                }
+              } 
+         ]
+      }
+    ]
+  }
+  
+  
