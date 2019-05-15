@@ -13,7 +13,7 @@ Le menu de l'application est composé de plusieurs onglets:
 - *Notifications* permet à l'utilisateur de visualiser ses notifications
 - *Congés* permet de créer des demandes de congés
 - *Notes de frais* permet de créer et d'éditer des notes de frais
-- *Test Dynatrace* est une page additionnelle servant de page test qu'on pourra éditer
+- *Page Test Dynatrace* est une page additionnelle servant de page test qu'on pourra éditer
 
 Selon le poste de l'utilisateur (Chef de service, RH ou Compta), il aura accès à des onglets de gestion en plus:
 - *Notifications Service* permet de visualiser les notifications relatives à son service
@@ -45,7 +45,7 @@ Comptabilité: <br>
 
 
 ### 1.d - Technologies utilisées
-En suivant ce document, vous installerez tout d'abord XAMPP qui est un outil de distribution Apache qui permet de créer facilement un serveur web local à des fins de test. On activera les modules MySql pour la base de données et l'application web PhpMyAdmin pour pouvoir gérer plus facilement cette base de données. Vous installerez ensuite le module Node.js et Angular pour pouvoir faire fonctionner l'application.
+En suivant ce document, vous installerez tout d'abord XAMPP qui est un outil de distribution Apache qui permet de créer facilement un serveur web local à des fins de test. On activera les modules MySql pour la base de données et l'application web PhpMyAdmin pour pouvoir gérer et visualiser plus facilement la base de données. Vous installerez ensuite Node.js et Angular pour pouvoir faire fonctionner l'application.
 
 #### Node.js
 Node.js est une plateforme construite sur le moteur JavaScript V8 de Chrome qui permet de développer des applications en utilisant du JavaScript. Il se distingue des autres plateformes gràce à une approche non bloquante permettant d'effectuer des entrées/sorties (I/O) de manière asynchrone. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Il est donc possible de se passer de serveurs web tels que Nginx ou Apache lors du déploiement.
@@ -58,7 +58,7 @@ Anular est un framework côté client open source basé sur le language de déve
 
 ### 2.a - Téléchargement du projet Git
 
-Dans l'interface GitHub, cliquer sur le bouton "Clone or Download" puis "Download ZIP" pour télécharger le projet.
+Dans l'interface GitHub du projet, cliquer sur le bouton "Clone or Download" puis "Download ZIP" pour télécharger le projet.
 
 ### 2.b - Partie base de données
 
@@ -136,6 +136,7 @@ npm i -g @angular-devkit/core typescript
 ### 3.a - Création de la base de données
 - Aller sur http://localhost:80/phpmyadmin/ <br>
 ou http://localhost:8080/phpmyadmin/ (si vous avez changé le port d'écoute d'Apache)<br>
+- Connecter vous avec l'identifiant "root" et le mot de passe "password". Si vous n'arrivez pas à vous connecter, réessayer avec l' identifiant "root" mais en laissant le champ de mot de passe vide (:exclamation: l'étape suivante 3.b sera absolument nécessaire)
 - Créer une nouvelle base de données avec comme nom : 'nara_database' (utf8mb4_bin)<br>
 - Aller dans l'onglet "Import" et importer le fichier: Nara-master/Database/nara_database.sql<br>
 - Exécuter.
@@ -181,7 +182,7 @@ artillery -V
 
 ### 4.b - Exemple de script 
 
-Artillery nous permet d'exécuter des scripts .json illustrant des scénarios de test. Dans cet exemple, nous spécifions que nous testons un service qui s'exécute sur http://localhost:3000 et qui parlera via HTTP. <br>
+Artillery nous permet d'exécuter des scénarios de test (scripts au format JSON). Dans cet exemple, nous spécifions que nous testons un service qui s'exécute sur http://localhost:3000 et qui parlera via HTTP. <br>
 
 Le scénario *scenario-login.json* comprend 3 phases:
 - Phase 1: Une phase de chargement qui dure 10 secondes avec 20 nouveaux utilisateurs virtuels se connectant à l'application Nara (arrivant toutes les secondes en moyenne) 
