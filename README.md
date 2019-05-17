@@ -164,7 +164,7 @@ ng serve -o
 L'application web Nara doit se lancer automatiquement à l'adresse: http://localhost:4200 <br>
 Connecter vous avec un des comptes décrits dans la partie 1.c (exemple - Identifiant: Travis, Mdp: password) <br><br>
 
-:exclamation: A chaque fois que vous voudrez lancer l'application, il faudra réitérer les étapes 3.c et 3.d
+:exclamation: A chaque fois que vous voudrez lancer l'application, il faudra restart MySql et Apache dans XAMPP et éxécuter les commandes des étapes 3.c et 3.d
 
 ## 4 - Tests de charge avec l'outil Artillery
 
